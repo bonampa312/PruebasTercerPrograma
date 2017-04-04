@@ -336,7 +336,9 @@ public class Graficas extends javax.swing.JFrame {
         tc.setHeaderValue("Coeficiente");
         System.out.println("Coeficiente");
         
-        th.repaint();
+        th.repaint(th.getHeaderRect(0));
+        th.repaint(th.getHeaderRect(1));
+        th.repaint(th.getHeaderRect(2));
         
     }
     

@@ -48,9 +48,7 @@ public class Calculos {
         double suma=0;
         double lnDato;
         while(null!=pivote){
-            lnDato = Math.log1p(pivote.getDato());
-            lnDato = Calculos.roundDouble(lnDato, 4);
-            System.out.println("Lognat "+pivote.getDato());
+            lnDato = Math.log(pivote.getDato());
             suma = suma + lnDato;
             pivote = pivote.getSiguiente();
         }
@@ -62,11 +60,8 @@ public class Calculos {
         double suma = 0;
         double dato;
         while(pivote!=null){
-            double termino = Math.log1p(pivote.getDato())-avg;
-            termino = Calculos.roundDouble(termino, 4);
+            double termino = Math.log(pivote.getDato())-avg;
             dato = Math.pow(termino, i);
-            dato = Calculos.roundDouble(dato, 4);
-            System.out.println("Lognat "+dato);
             suma = suma + dato;
             pivote = pivote.getSiguiente();
         }
