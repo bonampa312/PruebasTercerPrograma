@@ -14,8 +14,21 @@ public class Calculos {
     private double vs, small, medium, large, vl;
     private double avg, variance, stndDeviate;
     
+    public static double calcularMedia(ListaLigada datos){
+        double media = 0;
+        if(datos.getCabeza().getDato()==0)
+            return media;
+        else{
+            double numerador;
+            numerador = datos.sumar();
+            media = numerador/datos.getCabeza().getDato();
+        }
+        return media;
+    }
+    
     public ListaLigada calcularDatos(ListaLigada x, ListaLigada y){
-        
+        if(y == null)
+            return null;
         ListaLigada coeficiente = ListaLigada.dividirValores(x,y);
         double cantidadDatos;
         cantidadDatos = coeficiente.getCantidadNodos();
@@ -55,7 +68,7 @@ public class Calculos {
         return suma;
     }
 
-    static double sumarLnsLista(ListaLigada coeficiente, double avg, double i) {
+    public static double sumarLnsLista(ListaLigada coeficiente, double avg, double i) {
         Nodo pivote = coeficiente.getPrimero();
         double suma = 0;
         double dato;

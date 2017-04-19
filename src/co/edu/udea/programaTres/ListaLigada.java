@@ -137,7 +137,7 @@ public class ListaLigada {
         return null;
     }
     
-    static ListaLigada dividirValores(ListaLigada x, ListaLigada y) {
+    public static ListaLigada dividirValores(ListaLigada x, ListaLigada y) {
         if(x != null && y != null && x.getCantidadNodos() == y.getCantidadNodos()){
             ListaLigada resultado = new ListaLigada();
             for(int i = 0; i<x.getCantidadNodos(); i++){
