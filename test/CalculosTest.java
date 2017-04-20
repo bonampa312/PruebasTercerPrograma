@@ -14,28 +14,27 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author ELVIS
+ * @author RAFAEL
  */
 public class CalculosTest {
     GestionDatos obtenerDatos = new GestionDatos();
-    ListaLigada x, y;
+    ListaLigada x;
+    ListaLigada y;
     
-    
-    public CalculosTest() {
+    public CalculosTest() throws IOException {
+        this.x = obtenerDatos.leerDatos(",");
+        this.y = obtenerDatos.leerDatos(",");
     }
     
     @Test
     public void dividirValoresTest() throws IOException{
         ListaLigada resultado;
-        x = obtenerDatos.leerDatos("/");
-        y = null;
         resultado = ListaLigada.dividirValores(x,y);
         assertNotNull(resultado);
     }
     
     @Test
     public void sumarLnsListaTest(){
-        x = ListaLigada.dividirValores(x,y);
         double promedio = Calculos.calcularMedia(x);
         Double result = Calculos.sumarLnsLista(x, promedio, 2);
         assertTrue(result!=0);
