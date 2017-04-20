@@ -49,14 +49,16 @@ public class Calculos {
     
     public static double roundDouble(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
-
+        double result = 0;
         long factor = (long) Math.pow(10, places);
         value = value * factor;
         long tmp = Math.round(value);
-        return (double) tmp / factor;
+        if(factor != 0)
+            result = (double) tmp / factor;
+        return result;
     }
 
-    static double sumarLnsLista(ListaLigada coeficiente) {
+    public static double sumarLnsLista(ListaLigada coeficiente) {
         Nodo pivote = coeficiente.getPrimero();
         double suma=0;
         double lnDato;

@@ -40,4 +40,16 @@ public class CalculosTest {
         Double result = Calculos.sumarLnsLista(x, promedio, 2);
         assertTrue(result!=0);
     }
+
+    @Test
+    public void sumarLnsListaTestDos(){
+        x = ListaLigada.dividirValores(x,y);
+        Double result = Calculos.sumarLnsLista(x);
+        assertTrue(result!=0);
+    }
+    
+    @Test
+    public void roundDoubleTest(){
+        assertTrue(Calculos.roundDouble(5, 10) >= 0);
+    }
 }
